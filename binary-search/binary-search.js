@@ -1,8 +1,22 @@
-'use strict';
+"use strict";
 
 // Complete this algo
 const binarySearch = (array, target) => {
-	
+  let start = 0;
+  let end = array.length - 1;
+  let mid = 0;
+
+  while (start <= end) {
+    mid = Math.floor((start + end) / 2);
+    if (array[mid] === target) {
+      return true;
+    } else if (array[mid] < target) {
+      start = mid + 1;
+    } else {
+      end = mid - 1;
+    }
+  }
+  return false;
 };
 
 /*
@@ -14,4 +28,10 @@ const binarySearch = (array, target) => {
 
 */
 
-module.exports = binarySearch
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i] === target) {
+//       return true;
+//     }
+//   }
+//   return false;
+module.exports = binarySearch;
